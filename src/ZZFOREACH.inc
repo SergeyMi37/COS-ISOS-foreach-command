@@ -9,6 +9,7 @@ ZZFOREACH(%par) public {
 	set %par=$lfs(%par,";")
 	new %array,%do,%fwd,%key,%val
 	set %array=$lg(%par,1),%do=$lg(%par,2),%fwd=$lg(%par,3,1),%key=$lg(%par,4)
+	if '%fwd set %fwd=1
 	if %key]"" set %key=$o(@%array@(%key),-1*%fwd)
 	for  set %key=$o(@%array@(%key),%fwd,%val) quit:%key=""  do @%do
 	quit 1  
