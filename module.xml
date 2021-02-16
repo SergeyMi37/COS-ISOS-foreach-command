@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Export generator="Cache" version="25">
-  <Document name="COS-ISOS-foreach.ZPM">
+  <Document name="cos-isos-foreach.ZPM">
     <Module>
-      <Name>COS-ISOS-foreach</Name>
+      <Name>cos-isos-foreach</Name>
       <Version>0.0.1</Version>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
