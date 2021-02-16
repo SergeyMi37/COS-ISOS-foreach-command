@@ -1,3 +1,4 @@
+ROUTINE FOREACHMACRO [Type=INC]
 ##;FOREACHMACRO ;  macro definitions
 ##; %key = variable provide to loop trough array
 ##; %arr = the gobal or local array to be looped on
