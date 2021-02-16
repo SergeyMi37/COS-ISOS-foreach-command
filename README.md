@@ -39,13 +39,13 @@ the related code is here:
 ##; %fwd = 1/-1 loop direction ascending / descending, default = 1
 ##; %key = first key if existing
 ZZFOREACH(%par) public {
-set %par=$lfs(%par,";")
-new %array,%do,%fwd,%key,%val
-set %array=$lg(%par,1),%do=$lg(%par,2),%fwd=$lg(%par,3),%key=$lg(%par,4)
-if '%fwd set %fwd=1
-if %key]"" set %key=$o(@%array@(%key),$s(%fwd<1:-1,1:1))
-for  set %key=$o(@%array@(%key),%fwd,%val) quit:%key=""  do @%do
-quit 1 
+ set %par=$lfs(%par,";")
+ new %array,%do,%fwd,%key,%val
+ set %array=$lg(%par,1),%do=$lg(%par,2),%fwd=$lg(%par,3),%key=$lg(%par,4)
+ if '%fwd set %fwd=1
+ if %key]"" set %key=$o(@%array@(%key),$s(%fwd<1:-1,1:1))
+ for  set %key=$o(@%array@(%key),%fwd,%val) quit:%key=""  do @%do
+ quit 1 
 }
 ~~~
 
@@ -76,6 +76,6 @@ DEMO>zzforeach "^rcc;show^dump(%array,%key,%val);-1;3"
 ^rcc(1) = 1
 ~~~
 
-The INC files are available on OEX with ZPM
+The INC files are available on OEX with ZPM  
 
-[Article in DC](https://community.intersystems.com/post/foreach-objectscript)
+[Article in DC](https://community.intersystems.com/post/foreach-objectscript)  
