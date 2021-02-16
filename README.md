@@ -21,10 +21,10 @@ The macro is a generic and quite flexible solution and easy to adapt if required
 You simply include the macro and apply it.  
 Example:  
 ~~~
-#include FOREACHMACRO
-test $$$foreach(key,^rcc,show)
-quit
-show zwrite @$zr,! quit
+#include FOREACHMACRO   
+test $$$foreach(key,^rcc,show)   
+     quit
+show zwrite @$zr,! quit   
 ~~~
 
 Creating a command extension is available for all namespaces.  
@@ -32,13 +32,13 @@ Creating a command extension is available for all namespaces.
 It needs to be included in %ZLANGC00.mac  by #include ZZFOREACH   
 the related code is here: 
 ~~~
-##; run $order() ascending or descending on global or local arrays 
-##; pass semicolon separated parameter string ("%array;%do;%fwd,;%key")
-##; %array = global or local variable name
-##; %do = routine or method to be executed for each run
-##; %fwd = 1/-1 loop direction ascending / descending, default = 1
-##; %key = first key if existing
-ZZFOREACH(%par) public {
+##; run $order() ascending or descending on global or local arrays  
+##; pass semicolon separated parameter string ("%array;%do;%fwd,;%key")  
+##; %array = global or local variable name  
+##; %do = routine or method to be executed for each run   
+##; %fwd = 1/-1 loop direction ascending / descending, default = 1   
+##; %key = first key if existing  
+ZZFOREACH(%par) public {  
  set %par=$lfs(%par,";")
  new %array,%do,%fwd,%key,%val
  set %array=$lg(%par,1),%do=$lg(%par,2),%fwd=$lg(%par,3),%key=$lg(%par,4)
