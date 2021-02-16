@@ -18,18 +18,20 @@ The macro is a generic and quite flexible solution and easy to adapt if required
 #define foreach(%key,%arr,%do) set %key="" for  set %key=$o(%arr(%key)) q:%key=""  do %do
 #define foreachR(%key,%arr,%do) set %key="" for  set %key=$o(%arr(%key),-1) q:%key=""  do %do
 ```
-You simply include the macro and apply it.
-Example:
-
+You simply include the macro and apply it.  
+Example:  
+~~~
 #include FOREACHMACRO
 test $$$foreach(key,^rcc,show)
 quit
 show zwrite @$zr,! quit
-Creating a command extension is avalable for all namspaces.
+~~~
 
-It needs to be included in %ZLANGC00.mac  by #include ZZFOREACH  
-the related code is here:
+Creating a command extension is avalable for all namespaces.  
 
+It needs to be included in %ZLANGC00.mac  by #include ZZFOREACH   
+the related code is here: 
+~~~
 ##; run $order() ascending or descending on global or local arrays 
 ##; pass semicolon separated parameter string ("%array;%do;%fwd,;%key")
 ##; %array = global or local variable name
@@ -45,29 +47,35 @@ if %key]"" set %key=$o(@%array@(%key),$s(%fwd<1:-1,1:1))
 for  set %key=$o(@%array@(%key),%fwd,%val) quit:%key=""  do @%do
 quit 1 
 }
-In addition to the macro, the command allows optionally  to run zzFOREACH from a provided starting point forward or backward
-Examples:
+~~~
 
+In addition to the macro, the command allows optionally  to run zzFOREACH   
+from a provided starting point forward or backward.    
+Examples:  
+
+~~~
 DEMO>zzforeach "^rcc;show^dump(%array,%key,%val)"
 ^rcc(1) = 1
 ^rcc(2) = 2
 ^rcc(3) = 3
 ^rcc(4) = 4
 ^rcc(5) = 5
-
+~~~
 or from subscript 3:
-
+~~~
 DEMO>zzforeach "^rcc;c^foreach(%array,%key,%val);;3"
 ^rcc(3) = 3
 ^rcc(4) = 4
 ^rcc(5) = 5
-
+~~~
 or the same reverse:
-
+~~~
 DEMO>zzforeach "^rcc;c^foreach(%array,%key,%val);-1;3"
 ^rcc(3) = 3
 ^rcc(2) = 2
 ^rcc(1) = 1
-
+~~~
 
 The INC files are available on OEX with ZPM
+
+[Article in DC](https://community.intersystems.com/post/foreach-objectscript)
