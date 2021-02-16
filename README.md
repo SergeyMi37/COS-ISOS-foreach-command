@@ -27,7 +27,7 @@ quit
 show zwrite @$zr,! quit
 ~~~
 
-Creating a command extension is avalable for all namespaces.  
+Creating a command extension is available for all namespaces.  
 
 It needs to be included in %ZLANGC00.mac  by #include ZZFOREACH   
 the related code is here: 
@@ -63,14 +63,14 @@ DEMO>zzforeach "^rcc;show^dump(%array,%key,%val)"
 ~~~
 or from subscript 3:
 ~~~
-DEMO>zzforeach "^rcc;c^foreach(%array,%key,%val);;3"
+DEMO>zzforeach "^rcc;show^dump(%array,%key,%val);;3"
 ^rcc(3) = 3
 ^rcc(4) = 4
 ^rcc(5) = 5
 ~~~
 or the same reverse:
 ~~~
-DEMO>zzforeach "^rcc;c^foreach(%array,%key,%val);-1;3"
+DEMO>zzforeach "^rcc;show^dump(%array,%key,%val);-1;3"
 ^rcc(3) = 3
 ^rcc(2) = 2
 ^rcc(1) = 1
