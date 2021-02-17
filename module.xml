@@ -3,7 +3,8 @@
   <Document name="cos-isos-foreach.ZPM">
     <Module>
       <Name>cos-isos-foreach</Name>
-      <Version>0.0.2</Version>
+      <Version>0.0.3</Version>
+      <Description>Provide FOREACH functionality as macro or customized command</Description>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
       <Resource Name="ZZFOREACH.INC"/>
